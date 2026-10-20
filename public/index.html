@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Neon Arena — мультиплеер в реальном времени</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="app">
+    <canvas id="game"></canvas>
+
+    <div id="hud">
+      <div id="stats">
+        <div class="stat"><span class="label">HP</span><div class="bar"><div id="hp-bar"></div></div><span id="hp-val">100</span></div>
+        <div class="stat"><span class="label">Очки</span><span id="score-val" class="num">0</span></div>
+        <div class="stat"><span class="label">Убийства</span><span id="kills-val" class="num">0</span></div>
+        <div class="stat"><span class="label">Смерти</span><span id="deaths-val" class="num">0</span></div>
+        <div class="stat"><span class="label">Тик</span><span id="tick-val" class="num">0</span></div>
+      </div>
+
+      <div id="leaderboard">
+        <h3>Лидеры</h3>
+        <ol id="lb-list"></ol>
+      </div>
+
+      <div id="feed"></div>
+
+      <div id="respawn" class="hidden">Возрождение через <span id="respawn-timer">0</span>…</div>
+    </div>
+
+    <div id="overlay">
+      <div id="panel">
+        <h1>NEON ARENA</h1>
+        <p>Многопользовательская арена в реальном времени.<br>WASD / стрелки — движение, мышь — прицел, ЛКМ или пробел — огонь.</p>
+        <input id="name-input" maxlength="16" placeholder="Введите никнейм" autocomplete="off">
+        <button id="join-btn">Войти в арену</button>
+        <div id="status">Соединение…</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/shared/constants.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
